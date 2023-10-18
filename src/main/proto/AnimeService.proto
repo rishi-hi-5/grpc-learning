@@ -1,0 +1,18 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.demo.animeservice;
+
+message Power {
+  string name =1;
+  sfixed64 powerOutput =2;
+}
+
+message PowerId{
+  string id=1;
+}
+
+
+service AnimeService {
+  rpc addPower(Power) returns (PowerId);
+  rpc getPower(PowerId) returns (Power);
+}
